@@ -151,5 +151,9 @@ app.get("/refresh_token", function (req, res) {
   });
 });
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../client/build"));
+}
+
 console.log("Listening on 8888");
-app.listen(8888);
+app.listen(process.env.PORT || 8888);
