@@ -13,7 +13,8 @@
     "react-scripts": "4.0.1",
     "spotify-web-api-js": "^1.5.1",
     "web-vitals": "^0.2.4",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "words-to-numbers": "^1.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
