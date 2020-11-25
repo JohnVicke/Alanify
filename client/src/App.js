@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter, Route, useHistory } from "react-router-dom";
 
 import { createMuiTheme } from "@material-ui/core/styles";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 
 import "./App.css";
 import Landing from "./pages/Landing";
@@ -19,7 +18,8 @@ const theme = createMuiTheme({
   },
 });
 
-const App = () => {
+const App = (props) => {
+  const 
   const history = useHistory();
   return (
     <BrowserRouter history={history}>
