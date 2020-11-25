@@ -30,7 +30,7 @@ const app = express();
 app.use(cors());
 app.use(cookieParser());
 
-app.get("/login", (_, res) => {
+app.get("/spotify", (_, res) => {
   const state = generateRandomString(16);
   res.cookie(STATE_KEY, state);
   res.redirect(spotifyApi.createAuthorizeURL(scopes, state));
