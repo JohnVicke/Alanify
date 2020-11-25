@@ -20,7 +20,7 @@ const scopes = [
 const spotifyApi = new Spotify({
   clientId: process.env.SPOTIFY_CLIENT_ID,
   clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-  redirectUri: process.env.SPOTIFY_REDIRECT_URL,
+  redirectUri: `${process.env.SPOTIFY_REDIRECT_URL_PROD}/callback`,
 });
 
 const generateRandomString = (N) => (Math.random().toString(36) + Array(N).join("0")).slice(2, N + 2);
@@ -40,7 +40,7 @@ app.get("/callback", (req, res) => {
   const { code, state } = req.query;
   const storedState = req.cookies ? req.cookies[STATE_KEY] : null;
   if (state === null || state !== storedState) {
-    res.redirect("http://localhost:3000/error/statemismatch");
+    res.redirect(`${process.env.SPOTIFY_REDIRECT_URL_PROD}/error/statemismatch`);
   } else {
     res.clearCookie(STATE_KEY);
     spotifyApi
@@ -52,10 +52,10 @@ app.get("/callback", (req, res) => {
         spotifyApi.getMe().then(({ body }) => {
           console.log(body);
         });
-        res.redirect(`http://localhost:3000/user/${access_token}/${refresh_token}`);
+        res.redirect(`${process.env.SPOTIFY_REDIRECT_URL_PROD}/user/${access_token}/${refresh_token}`);
       })
       .catch((err) => {
-        res.redirect("http://localhost:3000/error/invalidtoken");
+        res.redirect(`${process.env.SPOTIFY_REDIRECT_URL_PROD}/error/invalidtoken`);
       });
   }
 });
