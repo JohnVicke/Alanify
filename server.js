@@ -20,7 +20,7 @@ const scopes = [
 const spotifyApi = new Spotify({
   clientId: process.env.SPOTIFY_CLIENT_ID,
   clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-  redirectUri: `${process.env.SPOTIFY_REDIRECT_URL_PROD}/spotify`,
+  redirectUri: `${process.env.SPOTIFY_REDIRECT_URL_PROD}/callback`,
 });
 
 const generateRandomString = (N) => (Math.random().toString(36) + Array(N).join("0")).slice(2, N + 2);
