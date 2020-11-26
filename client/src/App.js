@@ -1,11 +1,12 @@
 import React from "react";
-import { BrowserRouter, Route, useHistory } from "react-router-dom";
+import { HashRouter as Router, Route, useHistory } from "react-router-dom";
 
 import { createMuiTheme } from "@material-ui/core/styles";
 
 import "./App.css";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
+import Error from "./pages/Error";
 
 const theme = createMuiTheme({
   palette: {
@@ -21,11 +22,11 @@ const theme = createMuiTheme({
 const App = (props) => {
   const history = useHistory();
   return (
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <Route exact path="/" component={Login} />
       <Route path="/user/:accessToken/:refreshToken" component={Landing} />
       <Route path="/error/:errorMsg" component={Error} />
-    </BrowserRouter>
+    </Router>
   );
 };
 

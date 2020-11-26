@@ -27,7 +27,7 @@ const Login = () => {
           }}
           variant="contained"
           color="#f4e4cc"
-          onClick={() => window.location.assign("https://alanify.herokuapp.com/spotify")}
+          onClick={() => window.location.assign("http://localhost:8888/spotify")}
         >
           Continue with Spotify
         </Button>
