@@ -19,7 +19,6 @@ const theme = createMuiTheme({
 });
 
 const App = (props) => {
-  const 
   const history = useHistory();
   return (
     <BrowserRouter history={history}>
