@@ -43,7 +43,7 @@ app.get("/spotify", (_, res) => {
 app.get("/callback", (req, res) => {
   const { code, state } = req.query;
   const storedState = req.cookies ? req.cookies[STATE_KEY] : null;
-  if (state !== null || state !== storedState) {
+  if (state === null || state !== storedState) {
     res.redirect(`${url}/#/error/statemismatch`);
   } else {
     res.clearCookie(STATE_KEY);
