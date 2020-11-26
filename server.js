@@ -19,7 +19,7 @@ const scopes = [
 
 const redirectUrl =
   process.env.NODE_ENV === "production" ? process.env.SPOTIFY_REDIRECT_URL_PROD : process.env.SPOTIFY_REDIRECT_URL_DEV;
-const url = process.env.NODE_ENV === "production" ? process.env.URL_PROD : process.env.URL_DEV;
+const url = "https://alanify.herokuapp.com";
 
 const spotifyApi = new Spotify({
   clientId: process.env.SPOTIFY_CLIENT_ID,
