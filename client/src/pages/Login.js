@@ -1,5 +1,6 @@
 import { Box, Button, Container, makeStyles } from "@material-ui/core";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles(() => ({
 
 const Login = () => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <Box className={classes.root}>
       <Container maxWidth="lg">
@@ -27,7 +29,7 @@ const Login = () => {
           }}
           variant="contained"
           color="#f4e4cc"
-          onClick={() => window.location.assign("https://alanify.herokuapp.com/spotify")}
+          onClick={() => history.push("/spotify")}
         >
           Continue with Spotify
         </Button>
