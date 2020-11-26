@@ -17,8 +17,7 @@ const scopes = [
   "playlist-modify-private",
 ];
 
-const redirectUrl =
-  process.env.NODE_ENV === "production" ? process.env.SPOTIFY_REDIRECT_URL_PROD : process.env.SPOTIFY_REDIRECT_URL_DEV;
+const redirectUrl = "https://alanify.herokuapp.com/callback";
 const url = "https://alanify.herokuapp.com";
 
 const spotifyApi = new Spotify({
